@@ -69,10 +69,6 @@ public class Portals : MonoBehaviour
             item = collision.gameObject;
             itemObject = item.GetComponent<Objets>();
 
-            Debug.Log("obj === " + itemObject.ItemIndex);
-
-            Debug.Log("wanted === "+ wanted.ItemIndex);
-
             if (itemObject.ItemIndex != wanted.ItemIndex)
             {
                 itemObject.Bond();

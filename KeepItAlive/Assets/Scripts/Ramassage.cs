@@ -34,7 +34,7 @@ public class Ramassage : MonoBehaviour
                         inHand.transform.localPosition = new Vector3(0, 0, 0);
                         inHand.transform.localRotation = Hand.rotation;
                         inHand.GetComponent<Rigidbody>().isKinematic = true;
-                        Debug.Log(inHand.GetComponent<Objets>());
+                        //Debug.Log(inHand.GetComponent<Objets>());
                         
                     }
                 }

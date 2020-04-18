@@ -31,7 +31,7 @@ public class Objets : MonoBehaviour
 
     public void Bond()
     {
-        //rb.velocity = new Vector3(Random.Range(-0.5f,0.5f), 1, Random.Range(-0.5f, 0.5f)) * 10f;
-        rb.velocity = Vector3.up * 7f;
+        rb.velocity = new Vector3(Random.Range(-0.5f,0.5f), 1, Random.Range(-0.5f, 0.5f)) * 20f;
+        /*rb.velocity = Vector3.up * 7f;*/
     }
 }

@@ -417,39 +417,58 @@ public class Chaudron : MonoBehaviour
 
     public void CheckCraft()
     {
+        int obj1;
+        int obj2;
+        int obj3;
 
         if (slot1 != null)
         {
-            Objets obj1 = slot1.GetComponent<Objets>();
+            obj1 = slot1.GetComponent<Objets>().ItemIndex;
             if (slot2 != null)
             {
-                Objets obj2 = slot2.GetComponent<Objets>();
+                obj2 = slot2.GetComponent<Objets>().ItemIndex;
+                if (slot3 != null)
+                    obj3 = slot3.GetComponent<Objets>().ItemIndex;
+                else
+                    obj3 = 0;
                 foreach (DuoPot pot in DuoRecette.Recettes)
                 {
-                    if ((pot.slot1.ItemIndex == obj1.ItemIndex || pot.slot1.ItemIndex == obj2.ItemIndex) && (pot.slot2.ItemIndex == obj1.ItemIndex || pot.slot2.ItemIndex == obj2.ItemIndex))
+                    if ((pot.slot1.ItemIndex == obj1 || pot.slot1.ItemIndex == obj2 || pot.slot1.ItemIndex == obj3) && 
+                        (pot.slot2.ItemIndex == obj1 || pot.slot2.ItemIndex == obj2 || pot.slot2.ItemIndex == obj3))
                     { 
-                        Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
+                        //Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
                         var inst = Instantiate(pot.Result, exp.position, exp.rotation);
                         inst.GetComponent<Objets>().Expulse();
-                        manager.Used.Add(slot1);
-                        slot1.SetActive(false);
-                        manager.Used.Add(slot2);
-                        slot2.SetActive(false);
-                        slot1 = null;
-                        slot2 = null;
-                        if (slot3 != null)
-                            Expulse();
+                        if (obj1 == pot.slot1.ItemIndex || obj1 == pot.slot2.ItemIndex)
+                        {
+                            manager.Used.Add(slot1);
+                            slot1.SetActive(false);
+                            slot1 = null;
+                        }
+                        if (obj2 == pot.slot1.ItemIndex || obj2 == pot.slot2.ItemIndex)
+                        {
+                            manager.Used.Add(slot2);
+                            slot2.SetActive(false);
+                            slot2 = null;
+                        }
+                        if (obj3 == pot.slot1.ItemIndex || obj3 == pot.slot2.ItemIndex)
+                        {
+                            manager.Used.Add(slot3);
+                            slot3.SetActive(false);
+                            slot3 = null;
+                        }
+                        Expulse();
                         break;
                     }
                 }
                 if (slot3 != null)
                 {
-                    Objets obj3 = slot3.GetComponent<Objets>();
+                    obj3 = slot3.GetComponent<Objets>().ItemIndex;
                     foreach (TrioPot pot in TrioRecette.Recettes)
                     {
-                        if ((pot.slot1.ItemIndex == obj1.ItemIndex || pot.slot1.ItemIndex == obj2.ItemIndex || pot.slot1.ItemIndex == obj3.ItemIndex) &&
-                            (pot.slot2.ItemIndex == obj1.ItemIndex || pot.slot2.ItemIndex == obj2.ItemIndex || pot.slot2.ItemIndex == obj3.ItemIndex) &&
-                            (pot.slot3.ItemIndex == obj1.ItemIndex || pot.slot3.ItemIndex == obj2.ItemIndex || pot.slot3.ItemIndex == obj3.ItemIndex))
+                        if ((pot.slot1.ItemIndex == obj1 || pot.slot1.ItemIndex == obj2 || pot.slot1.ItemIndex == obj3) &&
+                            (pot.slot2.ItemIndex == obj1 || pot.slot2.ItemIndex == obj2 || pot.slot2.ItemIndex == obj3) &&
+                            (pot.slot3.ItemIndex == obj1 || pot.slot3.ItemIndex == obj2 || pot.slot3.ItemIndex == obj3))
                         {
                             Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
                             var inst = Instantiate(pot.Result, exp.position, exp.rotation);

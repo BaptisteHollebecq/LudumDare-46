@@ -6,7 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Objets : MonoBehaviour
 {
+
     public int ItemIndex;
+    public float scale;
+    public Quaternion rot;
 
 
     Vector3 spawnPos;

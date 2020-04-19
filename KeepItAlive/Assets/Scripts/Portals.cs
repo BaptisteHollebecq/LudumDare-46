@@ -8,6 +8,9 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
+    float remainingTime = 30f;
+    int timeLeft;
+    float score = 0;
 
     public SpawnManager manager;
 
@@ -17,6 +20,17 @@ public class Portals : MonoBehaviour
 
     private void Update()
     {
+        remainingTime -= Time.deltaTime;
+        score += Time.deltaTime;
+        timeLeft = (int)remainingTime;
+        if (remainingTime < 0)
+        {
+            //FONCTION FIN DU JEU 
+            Debug.Log("GROSSE MERDE");
+        }
+
+        Debug.Log(timeLeft);
+
         if (wanted == null)
         {
             var tmp = Random.Range(0, manager.ItemsModul.Count);
@@ -77,12 +91,9 @@ public class Portals : MonoBehaviour
             }
             else
             {
+                remainingTime += 30f;
                 if (item.layer != 11)
                     manager.Used.Add(item);
-                foreach(GameObject obj in manager.Used)
-                {
-                    Debug.Log(obj.name);
-                }
                 Success++;
                 item.SetActive(false);
                 wanted = null;

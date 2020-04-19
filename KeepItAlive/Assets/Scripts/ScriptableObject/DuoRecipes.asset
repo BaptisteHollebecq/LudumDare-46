@@ -21,14 +21,14 @@ MonoBehaviour:
       type: 3}
     slot2: {fileID: -6829043398021709563, guid: 833f66a70c18c7f45bf00e2d94745774,
       type: 3}
-    Result: {fileID: 2872887141365381513, guid: 6759fbc4a3f64cc44a74bfb5103cae9c,
+    Result: {fileID: 2872887141365381513, guid: 700bf30a819f2014f9e328417f89ee11,
       type: 3}
   - slot1: {fileID: -87859111663794310, guid: 4edc2a9677e0f9b41896e7d0501e6282, type: 3}
     slot2: {fileID: 4126137315645196936, guid: 4ed565b125670644d9e891796447d7c0, type: 3}
-    Result: {fileID: 2872887141365381513, guid: d17dacd8a8d765d4f96c8b5ee3f4ec42,
+    Result: {fileID: 2872887141365381513, guid: 5bfb336ff5d445d4aa23d65d96847051,
       type: 3}
   - slot1: {fileID: 1697670757121867255, guid: 610d09615eb5f7a4c91d730961225239, type: 3}
     slot2: {fileID: -1277375505548707383, guid: 0cb1de10d3409c443974297f3ab33b3d,
       type: 3}
-    Result: {fileID: 2872887141365381513, guid: e599d13f949d1d0448c3e14cfac9efe2,
+    Result: {fileID: 2872887141365381513, guid: a8b224e08515ada4d8b9549c1495e702,
       type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7068909814968785698}
   - component: {fileID: 4892005061985450413}
   - component: {fileID: -6829043398021709563}
-  - component: {fileID: -5557132457423512366}
+  - component: {fileID: 8707374683158765977}
   m_Layer: 0
   m_Name: Pneu
   m_TagString: objet
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 18
---- !u!64 &-5557132457423512366
+--- !u!64 &8707374683158765977
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

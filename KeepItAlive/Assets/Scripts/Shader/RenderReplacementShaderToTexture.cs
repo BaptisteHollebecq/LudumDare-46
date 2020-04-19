@@ -28,10 +28,10 @@ public class RenderReplacementShaderToTexture : MonoBehaviour
 
     private void Start()
     {
-        foreach (Transform t in transform)
+        /*foreach (Transform t in transform)
         {
             DestroyImmediate(t.gameObject);
-        }
+        }*/
 
         Camera thisCamera = GetComponent<Camera>();
 

@@ -8,6 +8,7 @@ public class Objets : MonoBehaviour
 {
 
     public int ItemIndex;
+    public Sprite ItemSprite;
 
 
     Vector3 spawnPos;

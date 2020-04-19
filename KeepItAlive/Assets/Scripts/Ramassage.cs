@@ -20,6 +20,9 @@ public class Ramassage : MonoBehaviour
 
     private void Update()
     {
+        if (HandFull)
+            Debug.Log(inHand.name);
+
         if (Input.GetMouseButtonDown(0))
         {
             if (!HandFull)

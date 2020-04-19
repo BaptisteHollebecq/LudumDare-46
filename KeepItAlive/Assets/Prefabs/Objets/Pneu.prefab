@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 18
+  ItemSprite: {fileID: 21300000, guid: 69e20705faeeb4c469f70ac33b6285c9, type: 3}
 --- !u!64 &8707374683158765977
 MeshCollider:
   m_ObjectHideFlags: 0

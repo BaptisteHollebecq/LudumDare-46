@@ -127,7 +127,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 0
+    - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _Color0: {r: 15.407002, g: 15.407002, b: 15.407002, a: 1}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 21745425389191671}
   - component: {fileID: -6242634233267867625}
   - component: {fileID: 2211202969355155117}
+  - component: {fileID: 7070260124902059102}
   m_Layer: 0
   m_Name: POUTRE EN I
   m_TagString: Untagged
@@ -109,3 +110,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 20
+  ItemSprite: {fileID: 21300000, guid: bc3ff5a1b45d96a4dbac0b7db33fc98e, type: 3}
+--- !u!64 &7070260124902059102
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761355324201252139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2232952877369940510, guid: 6942e015686eb4d468acfa94c0ef041c, type: 3}

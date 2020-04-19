@@ -7,10 +7,12 @@ public class SpawnManager : MonoBehaviour
 {
     public List<GameObject> Items = new List<GameObject>();
 
+
     [HideInInspector]
     public List<GameObject> ItemsModul = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> Used = new List<GameObject>();
+
     [HideInInspector]
     public List<Transform> Spawns = new List<Transform>();
     [HideInInspector]
@@ -19,7 +21,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        Used = new List<GameObject>();
 
         ResetSpawned();
         GetAllChild();
@@ -41,7 +42,6 @@ public class SpawnManager : MonoBehaviour
         foreach (Transform spawn in Spawns)
         {
             int tmp = GetRandom();
-           
 
             var inst = Instantiate(ItemsModul[tmp], spawn.position, spawn.rotation);
             ItemsModul.RemoveAt(tmp);
@@ -53,12 +53,13 @@ public class SpawnManager : MonoBehaviour
 
     private int GetRandom()
     {
-        int tmp;
+        /*int tmp;
         do
         {
             tmp = Random.Range(0, ItemsModul.Count);
         } while (ItemsModul[tmp].layer == 11);
-        return tmp;
+        return tmp;*/
+        return 0;
     }
 
     void GetAllChild()

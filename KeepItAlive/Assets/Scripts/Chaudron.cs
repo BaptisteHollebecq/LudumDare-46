@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Chaudron : MonoBehaviour
 {
+    public DuoRecettes DuoRecette;
+    public TrioRecettes TrioRecette;
+
+    public SpawnManager manager;
+
+
     GameObject slot1 = null;
     GameObject slot2 = null;
     GameObject slot3 = null;
@@ -12,19 +18,23 @@ public class Chaudron : MonoBehaviour
 
     Transform exp;
 
+    BoxCollider box;
+
     private void Start()
     {
         exp = transform.GetChild(0);
+        box = GetComponent<BoxCollider>();
     }
 
     private void Update()
     {
-        Debug.Log("Slot1 === " + slot1);
+ /*       Debug.Log("Slot1 === " + slot1);
         Debug.Log("Slot2 === " + slot2);
-        Debug.Log("Slot3 === " + slot3);
+        Debug.Log("Slot3 === " + slot3);*/
     }
 
-    public void CheckRecipe()
+    #region old
+  /*  public void CheckRecipe()
     {
         if (slot1 != null)
         {
@@ -266,7 +276,14 @@ public class Chaudron : MonoBehaviour
 
     private void CreateDuoPot(int first, int second)
     {
-        
+        foreach(DuoPot pot in DuoRecette.Recettes)
+        {
+            if ((pot.slot1 == slot1 && pot.slot1 == slot2)&&(pot.slot2 == slot1 && pot.slot2 == slot2))
+            {
+                //var inst = Instantiate()                  faire les pot
+                //inst.GetComponent<Objets>().Expulse();
+            }
+        }
         if (slot3 != null)
             Expulse();
     }
@@ -392,15 +409,79 @@ public class Chaudron : MonoBehaviour
                 }
 
         }
+    }*/
+
+    #endregion
+
+    #region test
+
+    public void CheckCraft()
+    {
+
+        if (slot1 != null)
+        {
+            Objets obj1 = slot1.GetComponent<Objets>();
+            if (slot2 != null)
+            {
+                Objets obj2 = slot2.GetComponent<Objets>();
+                foreach (DuoPot pot in DuoRecette.Recettes)
+                {
+                    if ((pot.slot1.ItemIndex == obj1.ItemIndex || pot.slot1.ItemIndex == obj2.ItemIndex) && (pot.slot2.ItemIndex == obj1.ItemIndex || pot.slot2.ItemIndex == obj2.ItemIndex))
+                    { 
+                        Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
+                        var inst = Instantiate(pot.Result, exp.position, exp.rotation);
+                        inst.GetComponent<Objets>().Expulse();
+                        manager.Used.Add(slot1);
+                        slot1.SetActive(false);
+                        manager.Used.Add(slot2);
+                        slot2.SetActive(false);
+                        slot1 = null;
+                        slot2 = null;
+                        if (slot3 != null)
+                            Expulse();
+                        break;
+                    }
+                }
+                if (slot3 != null)
+                {
+                    Objets obj3 = slot3.GetComponent<Objets>();
+                    foreach (TrioPot pot in TrioRecette.Recettes)
+                    {
+                        if ((pot.slot1.ItemIndex == obj1.ItemIndex || pot.slot1.ItemIndex == obj2.ItemIndex || pot.slot1.ItemIndex == obj3.ItemIndex) &&
+                            (pot.slot2.ItemIndex == obj1.ItemIndex || pot.slot2.ItemIndex == obj2.ItemIndex || pot.slot2.ItemIndex == obj3.ItemIndex) &&
+                            (pot.slot3.ItemIndex == obj1.ItemIndex || pot.slot3.ItemIndex == obj2.ItemIndex || pot.slot3.ItemIndex == obj3.ItemIndex))
+                        {
+                            Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
+                            var inst = Instantiate(pot.Result, exp.position, exp.rotation);
+                            inst.GetComponent<Objets>().Expulse();
+                            manager.Used.Add(slot1);
+                            slot1.SetActive(false);
+                            manager.Used.Add(slot2);
+                            slot2.SetActive(false);
+                            manager.Used.Add(slot3);
+                            slot2.SetActive(false);
+                            slot1 = null;
+                            slot2 = null;
+                            slot3 = null;
+                            break;
+                        }
+                    }
+                }
+                Expulse();
+            }
+            else
+                Expulse();
+        }
     }
 
-
-
-
+    #endregion
 
 
     public void Expulse()
     {
+        box.enabled = false;
+        StartCoroutine(ActiveCollider());
+
         if (slot1 != null)
         {
             slot1.transform.position = exp.position;
@@ -424,28 +505,38 @@ public class Chaudron : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private IEnumerator ActiveCollider()
     {
-        if (collision.transform.tag == "objet")
+        yield return new WaitForSeconds(1);
+        box.enabled = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "objet")
         {
-            if (slot1 == null)
+            if (other.transform.parent == null)
             {
-                slot1 = collision.gameObject;
-                collision.gameObject.SetActive(false);
-                Used.Add(collision.gameObject);
-            }
-            else if (slot2 == null)
-            {
-                slot2 = collision.gameObject;
-                collision.gameObject.SetActive(false);
-                Used.Add(collision.gameObject);
-            }
-            else if (slot3 == null)
-            {
-                slot3 = collision.gameObject;
-                collision.gameObject.SetActive(false);
-                Used.Add(collision.gameObject);
+                if (slot1 == null)
+                {
+                    slot1 = other.gameObject;
+                    other.gameObject.SetActive(false);
+                    Used.Add(other.gameObject);
+                }
+                else if (slot2 == null)
+                {
+                    slot2 = other.gameObject;
+                    other.gameObject.SetActive(false);
+                    Used.Add(other.gameObject);
+                }
+                else if (slot3 == null)
+                {
+                    slot3 = other.gameObject;
+                    other.gameObject.SetActive(false);
+                    Used.Add(other.gameObject);
+                }
             }
         }
     }
+
 }

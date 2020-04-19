@@ -33,14 +33,14 @@ public class Ramassage : MonoBehaviour
                         HandFull = true;
                         inHand.transform.parent = Hand;
                         inHand.transform.localPosition = new Vector3(0, 0, 0);
-                        inHand.transform.localRotation = Hand.rotation;
+                        //inHand.transform.localRotation = Hand.rotation;
                         inHand.GetComponent<Rigidbody>().isKinematic = true;
                         //Debug.Log(inHand.GetComponent<Objets>());
                         
                     }
                     if (hit.transform.tag == "chaudron")
                     {
-                        hit.transform.GetComponent<Chaudron>().CheckRecipe();
+                        hit.transform.GetChild(0).GetComponent<Chaudron>().CheckCraft();
                     }
                 }
             }

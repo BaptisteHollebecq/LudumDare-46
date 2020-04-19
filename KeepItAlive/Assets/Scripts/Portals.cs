@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Portals : MonoBehaviour
 {
     Objets wanted;
@@ -11,6 +12,7 @@ public class Portals : MonoBehaviour
     public SpawnManager manager;
 
     int Success = 0;
+
 
 
     private void Update()
@@ -75,7 +77,12 @@ public class Portals : MonoBehaviour
             }
             else
             {
-                manager.Used.Add(item);
+                if (item.layer != 11)
+                    manager.Used.Add(item);
+                foreach(GameObject obj in manager.Used)
+                {
+                    Debug.Log(obj.name);
+                }
                 Success++;
                 item.SetActive(false);
                 wanted = null;

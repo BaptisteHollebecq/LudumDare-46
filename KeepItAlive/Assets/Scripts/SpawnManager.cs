@@ -8,15 +8,18 @@ public class SpawnManager : MonoBehaviour
 
     [HideInInspector]
     public List<GameObject> ItemsModul = new List<GameObject>();
-    [HideInInspector]
+    //
     public List<GameObject> Used = new List<GameObject>();
     [HideInInspector]
     public List<Transform> Spawns = new List<Transform>();
     [HideInInspector]
     public List<Transform> SpawnAvailable = new List<Transform>();
 
+
     private void Awake()
     {
+        Used = new List<GameObject>();
+
         ResetSpawned();
         GetAllChild();
         SpawnItems();
@@ -28,7 +31,8 @@ public class SpawnManager : MonoBehaviour
         ItemsModul = new List<GameObject>();
         foreach (GameObject obj in Items)
         {
-            ItemsModul.Add(obj);
+            if (obj.layer != 11)
+                ItemsModul.Add(obj);
         }
     }
 
@@ -37,14 +41,11 @@ public class SpawnManager : MonoBehaviour
         foreach (Transform spawn in Spawns)
         {
             int tmp;
-            do
-            {
-                tmp = Random.Range(0, ItemsModul.Count);
-            } while (ItemsModul[tmp].GetComponent<Objets>().ItemIndex > 22);
+            tmp = Random.Range(0, ItemsModul.Count);
 
             var inst = Instantiate(ItemsModul[tmp], spawn.position, spawn.rotation);
             ItemsModul.RemoveAt(tmp);
-            if (ItemsModul.Count <13)
+            if (ItemsModul.Count == 0)
                 ResetSpawned();
         }
         ResetSpawned();

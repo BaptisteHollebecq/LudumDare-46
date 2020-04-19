@@ -8,7 +8,7 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
-    float remainingTime = 30f;
+    float remainingTime = 60f;
     int timeLeft;
     float score = 0;
 
@@ -22,14 +22,13 @@ public class Portals : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
         score += Time.deltaTime;
-        timeLeft = (int)remainingTime;
+       
         if (remainingTime < 0)
         {
             //FONCTION FIN DU JEU 
             Debug.Log("GROSSE MERDE");
         }
 
-        Debug.Log(timeLeft);
 
         if (wanted == null)
         {
@@ -92,6 +91,7 @@ public class Portals : MonoBehaviour
             else
             {
                 remainingTime += 30f;
+
                 if (item.layer != 11)
                     manager.Used.Add(item);
                 Success++;

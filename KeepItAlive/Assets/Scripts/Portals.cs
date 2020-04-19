@@ -16,7 +16,7 @@ public class Portals : MonoBehaviour
 
     int Success = 0;
 
-
+    public Animator animator;
 
     private void Update()
     {
@@ -86,10 +86,12 @@ public class Portals : MonoBehaviour
 
             if (itemObject.ItemIndex != wanted.ItemIndex)
             {
+                animator.SetTrigger("Deny");
                 itemObject.Bond();
             }
             else
             {
+                animator.SetTrigger("Accept");
                 remainingTime += 30f;
 
                 if (item.layer != 11)

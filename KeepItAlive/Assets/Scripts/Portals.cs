@@ -8,34 +8,54 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
-    float remainingTime = 30f;
+    float remainingTime = 60f;
     int timeLeft;
     float score = 0;
 
     public SpawnManager manager;
 
+
+    public int difficultyStade1 = 15;
+    public int difficultyStade2 = 30;
+
     int Success = 0;
+    int Difficulty = 0;
+    int tmp;
 
-
+    public Animator animator;
 
     private void Update()
     {
         remainingTime -= Time.deltaTime;
         score += Time.deltaTime;
-        timeLeft = (int)remainingTime;
+       
         if (remainingTime < 0)
         {
             //FONCTION FIN DU JEU 
             Debug.Log("GROSSE MERDE");
         }
 
-        Debug.Log(timeLeft);
 
         if (wanted == null)
         {
-            var tmp = Random.Range(0, manager.ItemsModul.Count);
+            
+
+            if (Difficulty <= difficultyStade1)
+            {
+                GetRandomNonPot(true);
+            }
+            else if (Difficulty > difficultyStade1 && Difficulty <= difficultyStade2)
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            }
+            else
+            {
+                GetRandomNonPot(false);
+            }
+
             wanted = manager.ItemsModul[tmp].GetComponent<Objets>();
             manager.ItemsModul.RemoveAt(tmp);
+
         }
         if (manager.ItemsModul.Count == 0)
             manager.ResetSpawned();
@@ -87,17 +107,42 @@ public class Portals : MonoBehaviour
 
             if (itemObject.ItemIndex != wanted.ItemIndex)
             {
+                animator.SetTrigger("Deny");
                 itemObject.Bond();
             }
             else
             {
+                animator.SetTrigger("Accept");
                 remainingTime += 30f;
+
                 if (item.layer != 11)
                     manager.Used.Add(item);
                 Success++;
+                Difficulty++;
                 item.SetActive(false);
                 wanted = null;
             }
         }
+    }
+
+
+    private int GetRandomNonPot(bool b)
+    {
+        int tmp;
+        if (b)
+        {
+            do
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            } while (manager.ItemsModul[tmp].layer == 11);
+        }
+        else
+        {
+            do
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            } while (manager.ItemsModul[tmp].layer != 11);
+        }
+        return tmp;
     }
 }

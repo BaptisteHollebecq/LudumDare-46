@@ -64,6 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 30
+  scale: 0
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &8561283965035336253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -172,6 +174,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6971791688548925681, guid: 89c37c999a02b4b43bfdf44fa62b5520,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7201ca024296f164389071cfb2794efe, type: 2}
+    - target: {fileID: 8428233839617465699, guid: 89c37c999a02b4b43bfdf44fa62b5520,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3380fb021e1b1724a8acc37d90aea3aa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c37c999a02b4b43bfdf44fa62b5520, type: 3}
 --- !u!4 &5563478563795948809 stripped

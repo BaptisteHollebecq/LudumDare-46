@@ -72,7 +72,7 @@ Material:
     - _DstBlend: 0
     - _EdgeLength: 15
     - _Enflamme: 0.055
-    - _Float0: 0.11
+    - _Float0: 1.68
     - _Float1: 4.46
     - _Float2: 0.91
     - _Float3: -0.06
@@ -104,6 +104,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.18752226, g: 0.36637735, b: 0.9245283, a: 1}
+    - _Color: {r: 0.8490566, g: 0.81488544, b: 0.47659308, a: 1}
     - _Color1: {r: 0.6099801, g: 0.7830189, b: 0.5281684, a: 0}
-    - _EmissionColor: {r: 0.3190192, g: 0.39499104, b: 0.6320754, a: 1}
+    - _EmissionColor: {r: 0.4830256, g: 0.34478462, b: 0.49056602, a: 1}

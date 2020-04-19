@@ -91,7 +91,7 @@ Material:
     - _OcclusionStrength: 1
     - _Oscillation: 2.12
     - _Parallax: 0.02
-    - _RotatorSpeed: 0.1
+    - _RotatorSpeed: 0.07
     - _SmoothnessTextureChannel: 0
     - _Specular: 1
     - _SpecularHighlights: 1
@@ -104,6 +104,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.124955505, g: 0.9811321, b: 0.94245934, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0.6099801, g: 0.7830189, b: 0.5281684, a: 0}
-    - _EmissionColor: {r: 0.5255874, g: 0.8773585, b: 0.8773585, a: 1}
+    - _EmissionColor: {r: 0.43231574, g: 0.6320754, b: 0.46004173, a: 1}

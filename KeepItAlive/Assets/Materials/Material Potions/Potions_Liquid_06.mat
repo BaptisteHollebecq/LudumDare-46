@@ -71,12 +71,12 @@ Material:
     - _Dithering: 0
     - _DstBlend: 0
     - _EdgeLength: 15
-    - _Enflamme: 0.055
+    - _Enflamme: 1
     - _Float0: 0.11
     - _Float1: 4.46
     - _Float2: 0.91
     - _Float3: -0.06
-    - _Float4: -0.29
+    - _Float4: 0.04
     - _Float5: 5.73
     - _Float9: 0.08
     - _GlossMapScale: 1
@@ -87,11 +87,11 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _MovementSpeed: 0
-    - _Noisescale: 0.152
+    - _Noisescale: 1
     - _OcclusionStrength: 1
     - _Oscillation: 2.12
     - _Parallax: 0.02
-    - _RotatorSpeed: 0.1
+    - _RotatorSpeed: 0.25
     - _SmoothnessTextureChannel: 0
     - _Specular: 1
     - _SpecularHighlights: 1
@@ -104,6 +104,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.05889164, g: 0.9433962, b: 0, a: 1}
+    - _Color: {r: 0.94509804, g: 0.35178712, b: 0, a: 1}
     - _Color1: {r: 0.6099801, g: 0.7830189, b: 0.5281684, a: 0}
-    - _EmissionColor: {r: 0.5385814, g: 0.8584906, b: 0.5626199, a: 1}
+    - _EmissionColor: {r: 1, g: 0.33053565, b: 0, a: 1}

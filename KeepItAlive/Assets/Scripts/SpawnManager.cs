@@ -36,10 +36,15 @@ public class SpawnManager : MonoBehaviour
     {
         foreach (Transform spawn in Spawns)
         {
-            int tmp = Random.Range(0, ItemsModul.Count);
+            int tmp;
+            do
+            {
+                tmp = Random.Range(0, ItemsModul.Count);
+            } while (ItemsModul[tmp].GetComponent<Objets>().ItemIndex > 22);
+
             var inst = Instantiate(ItemsModul[tmp], spawn.position, spawn.rotation);
             ItemsModul.RemoveAt(tmp);
-            if (ItemsModul.Count == 0)
+            if (ItemsModul.Count <13)
                 ResetSpawned();
         }
         ResetSpawned();

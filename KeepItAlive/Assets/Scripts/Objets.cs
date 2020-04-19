@@ -34,4 +34,9 @@ public class Objets : MonoBehaviour
         rb.velocity = new Vector3(Random.Range(-0.5f,0.5f), 1, Random.Range(-0.5f, 0.5f)) * 20f;
         /*rb.velocity = Vector3.up * 7f;*/
     }
+
+    public void Expulse()
+    {
+        rb.velocity = new Vector3(Random.Range(-.7f, .7f), 1, Random.Range(-.7f, .7f)) * 5f;
+    }
 }

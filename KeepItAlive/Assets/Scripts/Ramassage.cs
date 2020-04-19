@@ -15,6 +15,7 @@ public class Ramassage : MonoBehaviour
     private void Start()
     {
         Mask = ~Mask;
+
     }
 
     private void Update()
@@ -36,6 +37,10 @@ public class Ramassage : MonoBehaviour
                         inHand.GetComponent<Rigidbody>().isKinematic = true;
                         //Debug.Log(inHand.GetComponent<Objets>());
                         
+                    }
+                    if (hit.transform.tag == "chaudron")
+                    {
+                        hit.transform.GetComponent<Chaudron>().CheckRecipe();
                     }
                 }
             }

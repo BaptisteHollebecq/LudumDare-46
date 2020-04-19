@@ -48,7 +48,7 @@ public class Portals : MonoBehaviour
             var tmp = Random.Range(0, manager.SpawnAvailable.Count);
 
             obj.SetActive(true);
-
+            obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
             obj.transform.position = manager.SpawnAvailable[tmp].transform.position;
             obj.transform.rotation = manager.SpawnAvailable[tmp].transform.rotation;
 

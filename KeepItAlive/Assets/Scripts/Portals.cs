@@ -16,7 +16,7 @@ public class Portals : MonoBehaviour
 
     int Success = 0;
 
-
+    public Animator animator;
 
     private void Update()
     {
@@ -29,7 +29,7 @@ public class Portals : MonoBehaviour
             Debug.Log("GROSSE MERDE");
         }
 
-        Debug.Log(timeLeft);
+        
 
         if (wanted == null)
         {
@@ -91,6 +91,7 @@ public class Portals : MonoBehaviour
             }
             else
             {
+                animator.SetTrigger("Accept");
                 remainingTime += 30f;
                 if (item.layer != 11)
                     manager.Used.Add(item);

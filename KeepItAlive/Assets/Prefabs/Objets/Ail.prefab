@@ -64,8 +64,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 7
-  scale: 1
-  rot: {x: -0.6863773, y: -0.03163541, z: -0.3373513, w: 0.6434901}
 --- !u!64 &2691840626171043470
 MeshCollider:
   m_ObjectHideFlags: 0

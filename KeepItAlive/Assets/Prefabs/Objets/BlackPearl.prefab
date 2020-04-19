@@ -110,8 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 9
-  scale: 0
-  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!64 &-2885446889530676589
 MeshCollider:
   m_ObjectHideFlags: 0

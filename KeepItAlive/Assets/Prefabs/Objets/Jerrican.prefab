@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8951562531783239615}
   - component: {fileID: 99448691822026121}
   - component: {fileID: 5935138914471125360}
+  - component: {fileID: 8205709083092657199}
+  - component: {fileID: -3128203903842464285}
   m_Layer: 0
   m_Name: Jerrican
   m_TagString: Untagged
@@ -39,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5359581975532541356}
-  m_Mesh: {fileID: 5060444177187149915, guid: c76f0604a860f914fb3f29f649e86332, type: 3}
+  m_Mesh: {fileID: 7817671861966628892, guid: 215ed5dda84fe9043a6f12b05c057dcd, type: 3}
 --- !u!23 &5935138914471125360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,7 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: c76f0604a860f914fb3f29f649e86332, type: 3}
+  - {fileID: 2100000, guid: ed812105e43b37445b147a47f7ce7b5a, type: 2}
+  - {fileID: 2100000, guid: b872d117852ae5141be01b2d6228c62b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &8205709083092657199
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359581975532541356}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-3128203903842464285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359581975532541356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594c5590786e44446b64adf0dddc3da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 13

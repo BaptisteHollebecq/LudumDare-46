@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5295187271716434650}
   - component: {fileID: 1891724804903931427}
   - component: {fileID: 2474327086650738287}
+  - component: {fileID: 6351437148802496690}
+  - component: {fileID: -6967310569928093471}
   m_Layer: 0
   m_Name: Chaise
   m_TagString: Untagged
@@ -93,3 +95,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 5060444177187149915, guid: cdb71395721609149b8c8a8ba0950922, type: 3}
+--- !u!54 &6351437148802496690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179044075184995071}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-6967310569928093471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179044075184995071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594c5590786e44446b64adf0dddc3da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 15

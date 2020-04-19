@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4994678967530780350}
   - component: {fileID: 4038511370499935368}
   - component: {fileID: 7725685306171437169}
+  - component: {fileID: -926466775048867210}
+  - component: {fileID: -4639587516483125168}
   m_Layer: 0
   m_Name: GROSSE BOUL DE CRISTAL !
   m_TagString: Untagged
@@ -39,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8289987640449533101}
-  m_Mesh: {fileID: 8245426573784773463, guid: 1ec898605cc974040b12fa0de2e3587a, type: 3}
+  m_Mesh: {fileID: -7515796035914511885, guid: 4f51a533ec90dc1419e194bc6cdd96e7, type: 3}
 --- !u!23 &7725685306171437169
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,7 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 1ec898605cc974040b12fa0de2e3587a, type: 3}
+  - {fileID: 2100000, guid: 906907c6b2eb78e4d8b6c1b02e230a85, type: 2}
+  - {fileID: 2100000, guid: fcd2e49c5b9d2c246b8d7ed271e5b967, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &-926466775048867210
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289987640449533101}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-4639587516483125168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289987640449533101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594c5590786e44446b64adf0dddc3da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 8

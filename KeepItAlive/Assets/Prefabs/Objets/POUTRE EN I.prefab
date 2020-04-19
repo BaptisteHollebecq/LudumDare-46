@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3326698380722489144}
   - component: {fileID: 6012807095380606222}
   - component: {fileID: 21745425389191671}
+  - component: {fileID: -6242634233267867625}
+  - component: {fileID: 2211202969355155117}
   m_Layer: 0
   m_Name: POUTRE EN I
   m_TagString: Untagged
@@ -78,3 +80,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &-6242634233267867625
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761355324201252139}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2211202969355155117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761355324201252139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594c5590786e44446b64adf0dddc3da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 20

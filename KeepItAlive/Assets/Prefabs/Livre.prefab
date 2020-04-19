@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4489668890193825462}
   - component: {fileID: 7886378516964176463}
   - component: {fileID: 4348621586418909970}
+  - component: {fileID: -5470683843562777122}
   m_Layer: 0
   m_Name: Livre
   m_TagString: Livre
@@ -95,3 +96,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3539056992752051401, guid: 067c00d3b0cf42a4aa0415d799c3e1e5, type: 3}
+--- !u!114 &-5470683843562777122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452937051753006739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b84f9fd27113d4aa08253c8c8d288b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pages: []

@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class Livre : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Material> Pages;
+
+    MeshRenderer visu;
+    Material page;
+
+    int pageIndex = 0;
+
+    private void Start()
     {
-        
+        visu = GetComponent<MeshRenderer>();
+        page = visu.materials[2];
+        //Debug.Log("la page est  === " + page.name);
+
+
+
+        page = Pages[pageIndex];
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NextPage()
     {
-        
+        pageIndex++;
+        if (pageIndex > Pages.Count - 1)
+            pageIndex = 0;
+        page = Pages[pageIndex];
+    }
+
+    public void PreviousPage()
+    {
+        pageIndex--;
+        if (pageIndex < 0)
+            pageIndex = Pages.Count - 1;
+        page = Pages[pageIndex];
     }
 }

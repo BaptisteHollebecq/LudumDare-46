@@ -42,6 +42,10 @@ public class Ramassage : MonoBehaviour
                     {
                         hit.transform.GetChild(0).GetComponent<Chaudron>().CheckCraft();
                     }
+                    if (hit.transform.tag == "livre")
+                    {
+                        hit.transform.GetChild(0).GetComponent<Livre>().NextPage();
+                    }
                 }
             }
             else
@@ -52,13 +56,27 @@ public class Ramassage : MonoBehaviour
                 inHand = null;
             }
         }
-        if (Input.GetMouseButtonDown(1) && HandFull)
+        if (Input.GetMouseButtonDown(1))
         {
-            inHand.transform.parent = null;
-            inHand.GetComponent<Rigidbody>().isKinematic = false;
-            inHand.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * Power;
-            HandFull = false;
-            inHand = null;
+            if (HandFull)
+            {
+                inHand.transform.parent = null;
+                inHand.GetComponent<Rigidbody>().isKinematic = false;
+                inHand.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * Power;
+                HandFull = false;
+                inHand = null;
+            }
+            else
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
+                {
+                    if (hit.transform.tag == "livre")
+                    {
+                        hit.transform.GetChild(0).GetComponent<Livre>().PreviousPage();
+                    }
+                }
+            }
         }
 
     }

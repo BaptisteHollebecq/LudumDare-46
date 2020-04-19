@@ -14,7 +14,13 @@ public class Portals : MonoBehaviour
 
     public SpawnManager manager;
 
+
+    public int difficultyStade1 = 15;
+    public int difficultyStade2 = 30;
+
     int Success = 0;
+    int Difficulty = 0;
+    int tmp;
 
     public Animator animator;
 
@@ -32,9 +38,24 @@ public class Portals : MonoBehaviour
 
         if (wanted == null)
         {
-            var tmp = Random.Range(0, manager.ItemsModul.Count);
+            
+
+            if (Difficulty <= difficultyStade1)
+            {
+                GetRandomNonPot(true);
+            }
+            else if (Difficulty > difficultyStade1 && Difficulty <= difficultyStade2)
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            }
+            else
+            {
+                GetRandomNonPot(false);
+            }
+
             wanted = manager.ItemsModul[tmp].GetComponent<Objets>();
             manager.ItemsModul.RemoveAt(tmp);
+
         }
         if (manager.ItemsModul.Count == 0)
             manager.ResetSpawned();
@@ -97,9 +118,31 @@ public class Portals : MonoBehaviour
                 if (item.layer != 11)
                     manager.Used.Add(item);
                 Success++;
+                Difficulty++;
                 item.SetActive(false);
                 wanted = null;
             }
         }
+    }
+
+
+    private int GetRandomNonPot(bool b)
+    {
+        int tmp;
+        if (b)
+        {
+            do
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            } while (manager.ItemsModul[tmp].layer == 11);
+        }
+        else
+        {
+            do
+            {
+                tmp = Random.Range(0, manager.ItemsModul.Count);
+            } while (manager.ItemsModul[tmp].layer != 11);
+        }
+        return tmp;
     }
 }

@@ -83,13 +83,13 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Height: 0.06
-    - _Limit: 1.5
+    - _Limit: -1
     - _Metallic: 0
     - _Mode: 0
     - _MovementSpeed: 0
-    - _Noisescale: 0.152
+    - _Noisescale: 0.42
     - _OcclusionStrength: 1
-    - _Oscillation: 2.12
+    - _Oscillation: 0
     - _Parallax: 0.02
     - _RotatorSpeed: 0.1
     - _SmoothnessTextureChannel: 0
@@ -104,6 +104,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.18752226, g: 0.36637735, b: 0.9245283, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0.6099801, g: 0.7830189, b: 0.5281684, a: 0}
-    - _EmissionColor: {r: 0.3190192, g: 0.39499104, b: 0.6320754, a: 1}
+    - _EmissionColor: {r: 1, g: 0, b: 0.28782463, a: 1}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4557052409008602407}
   - component: {fileID: 9209978956480763538}
   - component: {fileID: -7127902406204476545}
+  - component: {fileID: 6789253905235849902}
   m_Layer: 8
   m_Name: WalldoorPrincipal
   m_TagString: Untagged
@@ -100,6 +101,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!64 &-7127902406204476545
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810581558125758971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4590546912921109264, guid: 16e44fbeed8bdd74ca121435ebf02706, type: 3}
+--- !u!64 &6789253905235849902
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

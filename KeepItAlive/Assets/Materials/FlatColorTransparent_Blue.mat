@@ -20,11 +20,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - _Cutoff: 0.91
     - _Dithering: 0
     - _DitheringType: 0
-    - _Float0: 0.9
+    - _Float0: 0.01
     - _Transparence: 0.1
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Color0: {r: 0.49127805, g: 0.827842, b: 0.9056604, a: 0}
+    - _Color0: {r: 0, g: 0.9407029, b: 1, a: 0}

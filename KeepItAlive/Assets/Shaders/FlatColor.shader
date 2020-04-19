@@ -4,13 +4,14 @@ Shader "Custom/FlatColorTransparent"
 {
 	Properties
 	{
-		_Cutoff( "Mask Clip Value", Float ) = 0.91
+		_Color0("Color 0", Color) = (0,0,0,0)
+		_Float0("Float 0", Float) = 0
 		[HideInInspector] __dirty( "", Int ) = 1
 	}
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Transparent"  "Queue" = "Geometry+0" "IgnoreProjector" = "True" }
+		Tags{ "RenderType" = "Transparent"  "Queue" = "Geometry+0" "IgnoreProjector" = "True" "IsEmissive" = "true"  }
 		Cull Back
 		ColorMask RGB
 		CGINCLUDE
@@ -19,8 +20,7 @@ Shader "Custom/FlatColorTransparent"
 		#pragma target 3.0
 		struct Input
 		{
-			float3 worldPos;
-			float3 worldNormal;
+			half filler;
 		};
 
 		struct SurfaceOutputCustomLightingCustom
@@ -36,21 +36,16 @@ Shader "Custom/FlatColorTransparent"
 			UnityGIInput GIData;
 		};
 
-		uniform float _Cutoff = 0.91;
+		uniform float4 _Color0;
+		uniform float _Float0;
 
 		inline half4 LightingStandardCustomLighting( inout SurfaceOutputCustomLightingCustom s, half3 viewDir, UnityGI gi )
 		{
 			UnityGIInput data = s.GIData;
 			Input i = s.SurfInput;
 			half4 c = 0;
-			float3 ase_worldPos = i.worldPos;
-			float3 ase_worldViewDir = normalize( UnityWorldSpaceViewDir( ase_worldPos ) );
-			float3 ase_worldNormal = i.worldNormal;
-			float fresnelNdotV6 = dot( ase_worldNormal, ase_worldViewDir );
-			float fresnelNode6 = ( 0.0 + 1.0 * pow( 1.0 - fresnelNdotV6, 5.0 ) );
 			c.rgb = 0;
-			c.a = 1;
-			clip( fresnelNode6 - _Cutoff );
+			c.a = _Float0;
 			return c;
 		}
 
@@ -62,6 +57,7 @@ Shader "Custom/FlatColorTransparent"
 		void surf( Input i , inout SurfaceOutputCustomLightingCustom o )
 		{
 			o.SurfInput = i;
+			o.Emission = _Color0.rgb;
 		}
 
 		ENDCG
@@ -88,11 +84,11 @@ Shader "Custom/FlatColorTransparent"
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
 			#include "UnityPBSLighting.cginc"
+			sampler3D _DitherMaskLOD;
 			struct v2f
 			{
 				V2F_SHADOW_CASTER;
 				float3 worldPos : TEXCOORD1;
-				float3 worldNormal : TEXCOORD2;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
@@ -105,7 +101,6 @@ Shader "Custom/FlatColorTransparent"
 				UNITY_TRANSFER_INSTANCE_ID( v, o );
 				float3 worldPos = mul( unity_ObjectToWorld, v.vertex ).xyz;
 				half3 worldNormal = UnityObjectToWorldNormal( v.normal );
-				o.worldNormal = worldNormal;
 				o.worldPos = worldPos;
 				TRANSFER_SHADOW_CASTER_NORMALOFFSET( o )
 				return o;
@@ -121,8 +116,6 @@ Shader "Custom/FlatColorTransparent"
 				UNITY_INITIALIZE_OUTPUT( Input, surfIN );
 				float3 worldPos = IN.worldPos;
 				half3 worldViewDir = normalize( UnityWorldSpaceViewDir( worldPos ) );
-				surfIN.worldPos = worldPos;
-				surfIN.worldNormal = IN.worldNormal;
 				SurfaceOutputCustomLightingCustom o;
 				UNITY_INITIALIZE_OUTPUT( SurfaceOutputCustomLightingCustom, o )
 				surf( surfIN, o );
@@ -132,6 +125,8 @@ Shader "Custom/FlatColorTransparent"
 				#if defined( CAN_SKIP_VPOS )
 				float2 vpos = IN.pos;
 				#endif
+				half alphaRef = tex3D( _DitherMaskLOD, float3( vpos.xy * 0.25, o.Alpha * 0.9375 ) ).a;
+				clip( alphaRef - 0.01 );
 				SHADOW_CASTER_FRAGMENT( IN )
 			}
 			ENDCG
@@ -142,9 +137,11 @@ Shader "Custom/FlatColorTransparent"
 }
 /*ASEBEGIN
 Version=18000
-200;73;732;653;491.7921;150.0026;1;True;False
-Node;AmplifyShaderEditor.FresnelNode;6;-598.8306,-235.8956;Inherit;True;Standard;WorldNormal;ViewDir;False;False;5;0;FLOAT3;0,0,1;False;4;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;5;False;1;FLOAT;0
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;91,-81;Float;False;True;-1;2;ASEMaterialInspector;0;0;CustomLighting;Custom/FlatColorTransparent;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Custom;0.91;True;True;0;False;Transparent;;Geometry;All;14;all;True;True;True;False;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;0;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT3;0,0,0;False;4;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
-WireConnection;0;10;6;0
+594;151;1255;868;907.6895;304.8581;1;True;False
+Node;AmplifyShaderEditor.ColorNode;7;-597.6895,-79.85812;Inherit;False;Property;_Color0;Color 0;1;0;Create;True;0;0;False;0;0,0,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;8;-497.6895,114.1419;Inherit;False;Property;_Float0;Float 0;2;0;Create;True;0;0;False;0;0;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;91,-81;Float;False;True;-1;2;ASEMaterialInspector;0;0;CustomLighting;Custom/FlatColorTransparent;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Custom;0.91;True;True;0;True;Transparent;;Geometry;All;14;all;True;True;True;False;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;0;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT3;0,0,0;False;4;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+WireConnection;0;2;7;0
+WireConnection;0;9;8;0
 ASEEND*/
-//CHKSM=FDF989DF9A3D04D601015A491809018E51C81DF9
+//CHKSM=0563C871E0F6A53F131FD9B9CE1146782593366F

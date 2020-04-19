@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3932935234867213320}
   - component: {fileID: 7325138506763421937}
   - component: {fileID: 4749954481470488036}
+  - component: {fileID: -6880650377019765195}
   m_Layer: 8
   m_Name: GroundCave
   m_TagString: Untagged
@@ -58,7 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: d20bb5b49d0008343b23e43c35019e8a, type: 3}
+  - {fileID: 2100000, guid: bc144ec35597ce24b92a5b2e86a89971, type: 2}
+  - {fileID: 2100000, guid: abde773892b819746931ec3dcdb4ecfb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!64 &4749954481470488036
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9049078165908585517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7254499246873914169, guid: d20bb5b49d0008343b23e43c35019e8a, type: 3}
+--- !u!64 &-6880650377019765195
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

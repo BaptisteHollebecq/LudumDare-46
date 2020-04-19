@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 510431300457627448}
   - component: {fileID: 6064629042400691137}
   - component: {fileID: 7216918738399535851}
+  - component: {fileID: 5546206070277303459}
   m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482347459644339997}
-  m_Mesh: {fileID: -2484138858798253774, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}
+  m_Mesh: {fileID: -2836961658398177141, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}
 --- !u!23 &6064629042400691137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58,6 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 670224309865224971, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}
   - {fileID: 670224309865224971, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -93,3 +95,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -2484138858798253774, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}
+--- !u!64 &5546206070277303459
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5482347459644339997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2836961658398177141, guid: bb27878b19ef5414e9525b3c6461a60c, type: 3}

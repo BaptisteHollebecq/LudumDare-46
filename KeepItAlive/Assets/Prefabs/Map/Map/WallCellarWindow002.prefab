@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6056804994507506430}
   - component: {fileID: 518636774770441735}
   - component: {fileID: 7603472724807589761}
+  - component: {fileID: 8983658329603100253}
   m_Layer: 8
   m_Name: WallCellarWindow002
   m_TagString: Untagged
@@ -58,7 +59,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 81fef70d0201b1d478af30895486f3d7, type: 3}
+  - {fileID: 2100000, guid: c48a66ca92e21fa4599b4f5108473ef8, type: 2}
+  - {fileID: 2100000, guid: d6dcdf62a71559343ac9b9b913c32232, type: 2}
+  - {fileID: 2100000, guid: bb41951cf14af1942b85b20bd8edeb5e, type: 2}
+  - {fileID: 2100000, guid: a6abd087ef2b218498cdf9f02a4248b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!64 &7603472724807589761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237804588163353307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -9014361387709958386, guid: 81fef70d0201b1d478af30895486f3d7, type: 3}
+--- !u!64 &8983658329603100253
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

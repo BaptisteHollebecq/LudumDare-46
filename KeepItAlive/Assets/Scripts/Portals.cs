@@ -87,6 +87,7 @@ public class Portals : MonoBehaviour
 
             if (itemObject.ItemIndex != wanted.ItemIndex)
             {
+                animator.SetTrigger("Deny");
                 itemObject.Bond();
             }
             else

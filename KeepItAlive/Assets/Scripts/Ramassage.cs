@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,9 @@ public class Ramassage : MonoBehaviour
     bool HandFull = false;
     GameObject inHand;
     MouseLook mouseCtrl;
+
+    bool canQuit = false;
+    bool froze = false;
 
     private void Start()
     {
@@ -85,9 +89,19 @@ public class Ramassage : MonoBehaviour
         }
         else
         {
-            if (Input.anyKey)
+            if (!froze)
+            {
+                froze = true;
+                StartCoroutine(YouCanQuit());
+            }
+            if (Input.anyKey && canQuit)
                 SceneManager.LoadScene("MenuMain");
         }
     }
 
+    private IEnumerator YouCanQuit()
+    {
+        yield return new WaitForSeconds(1);
+        canQuit = true;
+    }
 }

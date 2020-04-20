@@ -32,9 +32,13 @@ public class Portals : MonoBehaviour
 
     MouseLook mouseCtrl;
 
+    [System.Obsolete]
     private void Start()
     {
         mouseCtrl = Camera.main.GetComponent<MouseLook>();
+        int seed = Random.Range(0, 99999);
+        Random.InitState(seed);
+
     }
 
     private void Update()
@@ -91,7 +95,7 @@ public class Portals : MonoBehaviour
 
         spriteRenderer.sprite = wanted.ItemSprite;
 
-        string txt = "Temps restant : ";
+        string txt = "Remaining Time : ";
         if (remainingSec >= 60)
         {
             remainingMin++;

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5733868447022916713}
   - component: {fileID: 3659680774095904351}
   - component: {fileID: 7058624052689887910}
-  m_Layer: 0
+  - component: {fileID: -6792700966102190664}
+  m_Layer: 8
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8775707122240968314}
-  m_Mesh: {fileID: -4866538138929331613, guid: 8c4d3273e9b8ca7498b06ce08a181e60, type: 3}
+  m_Mesh: {fileID: 6508942946276188115, guid: ec4a345aff5be67458133a2ddc148dd1, type: 3}
 --- !u!23 &7058624052689887910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,6 +58,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 670224309865224971, guid: 8c4d3273e9b8ca7498b06ce08a181e60, type: 3}
+  - {fileID: 670224309865224971, guid: 8c4d3273e9b8ca7498b06ce08a181e60, type: 3}
   - {fileID: 670224309865224971, guid: 8c4d3273e9b8ca7498b06ce08a181e60, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -78,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-6792700966102190664
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775707122240968314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 6508942946276188115, guid: ec4a345aff5be67458133a2ddc148dd1, type: 3}

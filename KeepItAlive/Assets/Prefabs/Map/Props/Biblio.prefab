@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8379351255871940209}
   - component: {fileID: 653700539404999751}
   - component: {fileID: 6498377903938248894}
-  m_Layer: 0
+  - component: {fileID: 2871509325301281539}
+  m_Layer: 8
   m_Name: Biblio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2871509325301281539
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4760927450256282722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5060444177187149915, guid: 4ec3c8b9e59695f488e8751aea24d743, type: 3}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8181325659787109254}
   - component: {fileID: 924063555268450736}
   - component: {fileID: 6912576290757469513}
-  m_Layer: 0
+  - component: {fileID: -559725524142261867}
+  m_Layer: 8
   m_Name: Tapis 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5175394152240697749}
-  m_Mesh: {fileID: -951608786083511892, guid: a1b69c8c502e0b84d8f0ad04c639ce2d, type: 3}
+  m_Mesh: {fileID: -8152587404043507189, guid: f7225e1dd69ea364fb9148d2d9627f05, type: 3}
 --- !u!23 &6912576290757469513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,6 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 670224309865224971, guid: a1b69c8c502e0b84d8f0ad04c639ce2d, type: 3}
   - {fileID: 670224309865224971, guid: a1b69c8c502e0b84d8f0ad04c639ce2d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -78,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-559725524142261867
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175394152240697749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -8152587404043507189, guid: f7225e1dd69ea364fb9148d2d9627f05, type: 3}

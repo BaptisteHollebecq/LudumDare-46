@@ -9,13 +9,15 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
+
     public float remainingSec = 45f;
-    public float timegain = 30f;
+
+    public float timegainOBJ = 30f;
+    public float timegainPOT = 45f; 
     float remainingMin = 0f;
+
     int timeLeft;
     float score = 0;
-
-    //public Soundmanager soundManager;
 
     public SpawnManager manager;
 
@@ -39,8 +41,6 @@ public class Portals : MonoBehaviour
     private void Start()
     {
         mouseCtrl = Camera.main.GetComponent<MouseLook>();
-        int seed = Random.Range(0, 99999);
-        Random.InitState(seed);
 
     }
 
@@ -66,8 +66,6 @@ public class Portals : MonoBehaviour
                 text.enabled = false;
                 textScore.enabled = true;
                 textScore.text = "THE DEMON DIED\n\nYOU KEPT HIM ALIVE FOR\n" + Mathf.Floor(score) + " SECONDES";
-
-                Soundmanager.PlaySound("Die");
             }
         }
 
@@ -122,7 +120,7 @@ public class Portals : MonoBehaviour
         //Debug.Log(wanted.name);
 
 
-        if (Success >= 10)
+        if (Success >= 8)
         {
             RespawnStuffs();
         }
@@ -169,12 +167,18 @@ public class Portals : MonoBehaviour
             else
             {
                 animator.SetTrigger("Accept");
-                remainingSec += timegain;
-                Soundmanager.PlaySound("Accept");
                 Win.Play();
+                Soundmanager.PlaySound("Accept");
 
                 if (item.layer != 11)
+                {
                     manager.Used.Add(item);
+                    remainingSec += timegainOBJ;
+                }
+                else
+                    remainingSec += timegainPOT;
+
+
                 Success++;
                 Difficulty++;
                 item.SetActive(false);
@@ -186,8 +190,6 @@ public class Portals : MonoBehaviour
 
     private int GetRandomNonPot(bool b)
     {
-        Random.InitState(Random.Range(1,8));
-        int tmp;
         if (b)
         {
             do

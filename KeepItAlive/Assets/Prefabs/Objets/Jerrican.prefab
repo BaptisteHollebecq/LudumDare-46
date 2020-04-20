@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5935138914471125360}
   - component: {fileID: 8205709083092657199}
   - component: {fileID: -3128203903842464285}
+  - component: {fileID: 8347642803403355847}
   m_Layer: 0
   m_Name: Jerrican
   m_TagString: Untagged
@@ -110,3 +111,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 13
+  ItemSprite: {fileID: 21300000, guid: 9e19b0b4f7bf2cf418ded979d75f1f6c, type: 3}
+--- !u!64 &8347642803403355847
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359581975532541356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 7817671861966628892, guid: 215ed5dda84fe9043a6f12b05c057dcd, type: 3}

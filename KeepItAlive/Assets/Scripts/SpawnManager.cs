@@ -7,10 +7,14 @@ public class SpawnManager : MonoBehaviour
 {
     public List<GameObject> Items = new List<GameObject>();
 
+
     [HideInInspector]
     public List<GameObject> ItemsModul = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> Used = new List<GameObject>();
+    private List<GameObject> FirstSpawn = new List<GameObject>();
+
+
     [HideInInspector]
     public List<Transform> Spawns = new List<Transform>();
     [HideInInspector]
@@ -19,12 +23,24 @@ public class SpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        Used = new List<GameObject>();
 
+        ResetFirstSpawned();
         ResetSpawned();
         GetAllChild();
         SpawnItems();
 
+    }
+
+    public void ResetFirstSpawned()
+    {
+        ItemsModul = new List<GameObject>();
+        foreach (GameObject obj in Items)
+        {
+            if (obj.layer != 11)
+                FirstSpawn.Add(obj);
+
+            //ItemsModul.Add(obj);
+        }
     }
 
     public void ResetSpawned()
@@ -36,17 +52,17 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+
     void SpawnItems()
     {
         foreach (Transform spawn in Spawns)
         {
             int tmp = GetRandom();
-           
 
-            var inst = Instantiate(ItemsModul[tmp], spawn.position, spawn.rotation);
-            ItemsModul.RemoveAt(tmp);
-            if (ItemsModul.Count == 0)
-                ResetSpawned();
+            var inst = Instantiate(FirstSpawn[tmp], spawn.position, spawn.rotation);
+            FirstSpawn.RemoveAt(tmp);
+            if (FirstSpawn.Count == 0)
+                ResetFirstSpawned();
         }
         ResetSpawned();
     }
@@ -54,11 +70,8 @@ public class SpawnManager : MonoBehaviour
     private int GetRandom()
     {
         int tmp;
-        do
-        {
-            tmp = Random.Range(0, ItemsModul.Count);
-        } while (ItemsModul[tmp].layer == 11);
-        return tmp;
+        return (tmp = Random.Range(0, FirstSpawn.Count));
+
     }
 
     void GetAllChild()

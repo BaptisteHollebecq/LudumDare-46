@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7725685306171437169}
   - component: {fileID: -926466775048867210}
   - component: {fileID: -4639587516483125168}
+  - component: {fileID: -845020146927168686}
   m_Layer: 0
   m_Name: GROSSE BOUL DE CRISTAL !
   m_TagString: Untagged
@@ -110,3 +111,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIndex: 8
+  ItemSprite: {fileID: 21300000, guid: 1e9f5c95d1da59848bbc916aa2f3634c, type: 3}
+--- !u!64 &-845020146927168686
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289987640449533101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7515796035914511885, guid: 4f51a533ec90dc1419e194bc6cdd96e7, type: 3}

@@ -23,6 +23,7 @@ public class Portals : MonoBehaviour
     int tmp;
 
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     private void Update()
     {
@@ -42,7 +43,7 @@ public class Portals : MonoBehaviour
 
             if (Difficulty <= difficultyStade1)
             {
-                GetRandomNonPot(true);
+                tmp = GetRandomNonPot(true);
             }
             else if (Difficulty > difficultyStade1 && Difficulty <= difficultyStade2)
             {
@@ -50,7 +51,7 @@ public class Portals : MonoBehaviour
             }
             else
             {
-                GetRandomNonPot(false);
+                tmp = GetRandomNonPot(false);
             }
 
             wanted = manager.ItemsModul[tmp].GetComponent<Objets>();
@@ -60,7 +61,12 @@ public class Portals : MonoBehaviour
         if (manager.ItemsModul.Count == 0)
             manager.ResetSpawned();
 
-        Debug.Log(wanted);
+
+
+        spriteRenderer.sprite = wanted.ItemSprite;
+
+        Debug.Log(wanted.name);
+
 
         if (Success >= 10)
         {
@@ -93,11 +99,6 @@ public class Portals : MonoBehaviour
         manager.Used = new List<GameObject>();
     }
 
-    public void NewSpawnAvailable(Transform spawn)
-    {
-        manager.SpawnAvailable.Add(spawn);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "objet")
@@ -128,6 +129,7 @@ public class Portals : MonoBehaviour
 
     private int GetRandomNonPot(bool b)
     {
+        Random.InitState(Random.Range(1,8));
         int tmp;
         if (b)
         {

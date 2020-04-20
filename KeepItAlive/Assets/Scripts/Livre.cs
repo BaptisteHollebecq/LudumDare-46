@@ -6,20 +6,24 @@ public class Livre : MonoBehaviour
 {
     public List<Material> Pages;
 
-    MeshRenderer visu;
+    Renderer visu;
+    Material[] sharedpage;
     Material page;
 
-    int pageIndex = 0;
+    int pageIndex = 5;
 
     private void Start()
     {
-        visu = GetComponent<MeshRenderer>();
-        page = visu.materials[2];
-        //Debug.Log("la page est  === " + page.name);
+        visu = GetComponent<Renderer>();
+        visu.enabled = true;
 
-
+        sharedpage = visu.materials;
 
         page = Pages[pageIndex];
+
+        sharedpage[2] = page;
+
+        visu.sharedMaterials = sharedpage;
     }
 
     public void NextPage()
@@ -28,6 +32,9 @@ public class Livre : MonoBehaviour
         if (pageIndex > Pages.Count - 1)
             pageIndex = 0;
         page = Pages[pageIndex];
+        sharedpage = visu.materials;
+        sharedpage[2] = page;
+        visu.sharedMaterials = sharedpage;
     }
 
     public void PreviousPage()
@@ -36,5 +43,8 @@ public class Livre : MonoBehaviour
         if (pageIndex < 0)
             pageIndex = Pages.Count - 1;
         page = Pages[pageIndex];
+        sharedpage = visu.materials;
+        sharedpage[2] = page;
+        visu.sharedMaterials = sharedpage;
     }
 }

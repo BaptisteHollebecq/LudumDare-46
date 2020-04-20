@@ -20,3 +20,17 @@ MonoBehaviour:
     slot3: {fileID: 6832217764729545512, guid: a17e34cc24691dc408ec5a9aaaebf954, type: 3}
     Result: {fileID: 2872887141365381513, guid: fb5a5a5f133b6a24796365924a528cae,
       type: 3}
+  - slot1: {fileID: -6369584123793275763, guid: 41f7ab3ec33ef164b873e69fcc8962a6,
+      type: 3}
+    slot2: {fileID: -4667071305942856439, guid: 5bb4c3a4fe387da4dae70abaf92fa162,
+      type: 3}
+    slot3: {fileID: -2583354697167604565, guid: e64c7e3ee0497ce4aa977bd298a3432c,
+      type: 3}
+    Result: {fileID: 2872887141365381513, guid: 67559910048cee4428a284100419e2bd,
+      type: 3}
+  - slot1: {fileID: -87859111663794310, guid: 4edc2a9677e0f9b41896e7d0501e6282, type: 3}
+    slot2: {fileID: 2211202969355155117, guid: d04152806d09182409b9512dac78febd, type: 3}
+    slot3: {fileID: -3128203903842464285, guid: d6707c622da7d9243bc4c8003195235a,
+      type: 3}
+    Result: {fileID: 2872887141365381513, guid: 0953150889f039c4383ee164ae26350c,
+      type: 3}

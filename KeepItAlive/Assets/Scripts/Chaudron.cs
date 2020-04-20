@@ -9,6 +9,7 @@ public class Chaudron : MonoBehaviour
     public TrioRecettes TrioRecette;
 
     public SpawnManager manager;
+    //public Soundmanager soundManager;
 
 
     GameObject slot1 = null;
@@ -19,6 +20,8 @@ public class Chaudron : MonoBehaviour
     Transform exp;
 
     BoxCollider box;
+
+    public ParticleSystem WBrew;
 
     private void Start()
     {
@@ -435,7 +438,8 @@ public class Chaudron : MonoBehaviour
                 {
                     if ((pot.slot1.ItemIndex == obj1 || pot.slot1.ItemIndex == obj2 || pot.slot1.ItemIndex == obj3) && 
                         (pot.slot2.ItemIndex == obj1 || pot.slot2.ItemIndex == obj2 || pot.slot2.ItemIndex == obj3))
-                    { 
+                    {
+                        
                         //Debug.Log("SPAWNED!!!!!!!!!!!!!!!!!!!");
                         var inst = Instantiate(pot.Result, exp.position, exp.rotation);
                         inst.GetComponent<Objets>().Expulse();
@@ -457,6 +461,7 @@ public class Chaudron : MonoBehaviour
                             slot3.SetActive(false);
                             slot3 = null;
                         }
+                       
                         Expulse();
                         break;
                     }
@@ -522,6 +527,9 @@ public class Chaudron : MonoBehaviour
             slot3.GetComponent<Objets>().Expulse();
             slot3 = null;
         }
+
+        Soundmanager.PlaySound("Brew");
+        WBrew.Play();
     }
 
     private IEnumerator ActiveCollider()

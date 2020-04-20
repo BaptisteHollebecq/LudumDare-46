@@ -12,6 +12,8 @@ public class Livre : MonoBehaviour
 
     int pageIndex = 5;
 
+    //public Soundmanager soundManager;
+
     private void Start()
     {
         visu = GetComponent<Renderer>();
@@ -35,6 +37,7 @@ public class Livre : MonoBehaviour
         sharedpage = visu.materials;
         sharedpage[2] = page;
         visu.sharedMaterials = sharedpage;
+        Soundmanager.PlaySound("Sheet");
     }
 
     public void PreviousPage()
@@ -46,5 +49,6 @@ public class Livre : MonoBehaviour
         sharedpage = visu.materials;
         sharedpage[2] = page;
         visu.sharedMaterials = sharedpage;
+        Soundmanager.PlaySound("Sheet");
     }
 }

@@ -15,6 +15,8 @@ public class Portals : MonoBehaviour
     int timeLeft;
     float score = 0;
 
+    //public Soundmanager soundManager;
+
     public SpawnManager manager;
 
 
@@ -64,6 +66,8 @@ public class Portals : MonoBehaviour
                 text.enabled = false;
                 textScore.enabled = true;
                 textScore.text = "THE DEMON DIED\n\nYOU KEPT HIM ALIVE FOR\n" + Mathf.Floor(score) + " SECONDES";
+
+                Soundmanager.PlaySound("Die");
             }
         }
 
@@ -160,11 +164,13 @@ public class Portals : MonoBehaviour
             {
                 animator.SetTrigger("Deny");
                 itemObject.Bond();
+                Soundmanager.PlaySound("Decline");
             }
             else
             {
                 animator.SetTrigger("Accept");
                 remainingSec += timegain;
+                Soundmanager.PlaySound("Accept");
                 Win.Play();
 
                 if (item.layer != 11)

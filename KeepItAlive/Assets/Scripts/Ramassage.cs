@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ramassage : MonoBehaviour
 {
@@ -11,77 +12,82 @@ public class Ramassage : MonoBehaviour
 
     bool HandFull = false;
     GameObject inHand;
+    MouseLook mouseCtrl;
 
     private void Start()
     {
         Mask = ~Mask;
-
+        mouseCtrl = Camera.main.GetComponent<MouseLook>();
     }
 
     private void Update()
     {
-        if (HandFull)
-            Debug.Log(inHand.name);
-
-        if (Input.GetMouseButtonDown(0))
+        if (!mouseCtrl.freeze)
         {
-            if (!HandFull)
+            if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
+                if (!HandFull)
                 {
-                    if (hit.transform.tag == "objet")
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
                     {
-                        inHand = hit.transform.gameObject;
-                        HandFull = true;
-                        inHand.transform.parent = Hand;
-                        inHand.transform.localPosition = new Vector3(0, 0, 0);
-                        //inHand.transform.localRotation = Hand.rotation;
-                        inHand.GetComponent<Rigidbody>().isKinematic = true;
-                        //Debug.Log(inHand.GetComponent<Objets>());
-                        
+                        if (hit.transform.tag == "objet")
+                        {
+                            inHand = hit.transform.gameObject;
+                            HandFull = true;
+                            inHand.transform.parent = Hand;
+                            inHand.transform.localPosition = new Vector3(0, 0, 0);
+                            //inHand.transform.localRotation = Hand.rotation;
+                            inHand.GetComponent<Rigidbody>().isKinematic = true;
+                            //Debug.Log(inHand.GetComponent<Objets>());
+
+                        }
+                        if (hit.transform.tag == "chaudron")
+                        {
+                            hit.transform.GetChild(0).GetComponent<Chaudron>().CheckCraft();
+                        }
+                        if (hit.transform.tag == "Livre")
+                        {
+                            hit.transform.GetComponent<Livre>().NextPage();
+                        }
                     }
-                    if (hit.transform.tag == "chaudron")
+                }
+                else
+                {
+                    inHand.transform.parent = null;
+                    inHand.GetComponent<Rigidbody>().isKinematic = false;
+                    HandFull = false;
+                    inHand = null;
+                }
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (HandFull)
+                {
+                    inHand.transform.parent = null;
+                    inHand.GetComponent<Rigidbody>().isKinematic = false;
+                    inHand.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * Power;
+                    HandFull = false;
+                    inHand = null;
+                }
+                else
+                {
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
                     {
-                        hit.transform.GetChild(0).GetComponent<Chaudron>().CheckCraft();
-                    }
-                    if (hit.transform.tag == "Livre")
-                    {
-                        hit.transform.GetComponent<Livre>().NextPage();
+                        if (hit.transform.tag == "Livre")
+                        {
+                            hit.transform.GetComponent<Livre>().PreviousPage();
+                        }
                     }
                 }
             }
-            else
-            {
-                inHand.transform.parent = null;
-                inHand.GetComponent<Rigidbody>().isKinematic = false;
-                HandFull = false;
-                inHand = null;
-            }
         }
-        if (Input.GetMouseButtonDown(1))
+        else
         {
-            if (HandFull)
-            {
-                inHand.transform.parent = null;
-                inHand.GetComponent<Rigidbody>().isKinematic = false;
-                inHand.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * Power;
-                HandFull = false;
-                inHand = null;
-            }
-            else
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
-                {
-                    if (hit.transform.tag == "Livre")
-                    {
-                        hit.transform.GetComponent<Livre>().PreviousPage();
-                    }
-                }
-            }
+            if (Input.anyKey)
+                SceneManager.LoadScene("MenuMain");
         }
-
     }
 
 }

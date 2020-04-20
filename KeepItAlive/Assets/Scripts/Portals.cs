@@ -37,8 +37,6 @@ public class Portals : MonoBehaviour
     private void Start()
     {
         mouseCtrl = Camera.main.GetComponent<MouseLook>();
-        int seed = Random.Range(0, 99999);
-        Random.InitState(seed);
 
     }
 
@@ -180,8 +178,6 @@ public class Portals : MonoBehaviour
 
     private int GetRandomNonPot(bool b)
     {
-        Random.InitState(Random.Range(1,8));
-        int tmp;
         if (b)
         {
             do

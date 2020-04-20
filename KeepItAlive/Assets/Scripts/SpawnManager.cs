@@ -21,6 +21,8 @@ public class SpawnManager : MonoBehaviour
     public List<Transform> SpawnAvailable = new List<Transform>();
 
 
+    int tmp;
+
     private void Awake()
     {
 
@@ -57,7 +59,7 @@ public class SpawnManager : MonoBehaviour
     {
         foreach (Transform spawn in Spawns)
         {
-            int tmp = GetRandom();
+            tmp = Random.Range(0, FirstSpawn.Count);
 
             var inst = Instantiate(FirstSpawn[tmp], spawn.position, spawn.rotation);
             FirstSpawn.RemoveAt(tmp);
@@ -65,13 +67,6 @@ public class SpawnManager : MonoBehaviour
                 ResetFirstSpawned();
         }
         ResetSpawned();
-    }
-
-    private int GetRandom()
-    {
-        int tmp;
-        return (tmp = Random.Range(0, FirstSpawn.Count));
-
     }
 
     void GetAllChild()

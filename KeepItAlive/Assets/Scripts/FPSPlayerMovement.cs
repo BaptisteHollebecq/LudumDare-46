@@ -70,6 +70,7 @@ public class FPSPlayerMovement : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
         }
+
     }
 
 

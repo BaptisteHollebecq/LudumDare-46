@@ -19,6 +19,7 @@ public class MAINMENU : MonoBehaviour
         Button.OnClicked += MoveToPivot;
         BackButton = transform.GetChild(0).gameObject;
         BackButton.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnDestroy()

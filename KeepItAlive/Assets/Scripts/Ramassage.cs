@@ -26,6 +26,14 @@ public class Ramassage : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Debug.Log("echap");
+            SceneManager.LoadScene("MenuMain");
+        }
+
+
+
         if (!mouseCtrl.freeze)
         {
             if (Input.GetMouseButtonDown(0))

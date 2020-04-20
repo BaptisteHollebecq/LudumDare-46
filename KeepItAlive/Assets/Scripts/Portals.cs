@@ -29,6 +29,7 @@ public class Portals : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Text text;
     public Text textScore;
+    public ParticleSystem Win;
 
     MouseLook mouseCtrl;
 
@@ -164,6 +165,7 @@ public class Portals : MonoBehaviour
             {
                 animator.SetTrigger("Accept");
                 remainingSec += timegain;
+                Win.Play();
 
                 if (item.layer != 11)
                     manager.Used.Add(item);

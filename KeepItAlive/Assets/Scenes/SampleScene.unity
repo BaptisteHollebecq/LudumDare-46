@@ -582,6 +582,11 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 989688550}
+    - target: {fileID: 7052808797766624328, guid: 669d17ecdd7dd3e418725fdcd9d94819,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 231125833}
     - target: {fileID: 3355591382830797279, guid: 669d17ecdd7dd3e418725fdcd9d94819,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -639,6 +644,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669d17ecdd7dd3e418725fdcd9d94819, type: 3}
+--- !u!114 &231125833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5702803774898945117, guid: d6d91149c54c25b45b267118c7c2d99f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1554222960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278351562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,8 +1698,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -3.786532e-29, y: 9.0592554e-11, z: -3.8175235e-38,
-    w: 1.2976174e+34}
+  m_BoundingSphereOverride: {x: 10, y: -11, z: 9, w: 1.8e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

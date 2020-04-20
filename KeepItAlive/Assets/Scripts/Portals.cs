@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Portals : MonoBehaviour
@@ -8,7 +9,9 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
-    float remainingTime = 60f;
+    public float remainingSec = 45f;
+    public float timegain = 30f;
+    float remainingMin = 0f;
     int timeLeft;
     float score = 0;
 
@@ -24,16 +27,39 @@ public class Portals : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public Text text;
+    public Text textScore;
+
+    MouseLook mouseCtrl;
+
+    private void Start()
+    {
+        mouseCtrl = Camera.main.GetComponent<MouseLook>();
+    }
 
     private void Update()
     {
-        remainingTime -= Time.deltaTime;
-        score += Time.deltaTime;
-       
-        if (remainingTime < 0)
+        if (!mouseCtrl.freeze)
         {
-            //FONCTION FIN DU JEU 
-            Debug.Log("GROSSE MERDE");
+            remainingSec -= Time.deltaTime;
+            score += Time.deltaTime;
+        }
+       
+        if (remainingSec < 1)
+        {
+            if (remainingMin != 0)
+            {
+                remainingMin--;
+                remainingSec += 60;
+            }
+            else
+            {
+                //FONCTION FIN DU JEU 
+                mouseCtrl.freeze = true;
+                text.enabled = false;
+                textScore.enabled = true;
+                textScore.text = "THE DEMON DIED\n\nYOU KEPT HIM ALIVE FOR\n" + Mathf.Floor(score) + " SECONDES";
+            }
         }
 
 
@@ -65,7 +91,26 @@ public class Portals : MonoBehaviour
 
         spriteRenderer.sprite = wanted.ItemSprite;
 
-        Debug.Log(wanted.name);
+        string txt = "Temps restant : ";
+        if (remainingSec >= 60)
+        {
+            remainingMin++;
+            remainingSec -= 60;
+        }
+        if (remainingMin != 0)
+        {
+            txt += Mathf.Floor(remainingMin);
+            txt += " Minutes ";
+        }
+        txt += Mathf.Floor(remainingSec % 60).ToString() + " Secondes";
+
+
+
+
+
+        text.text = txt;
+
+        //Debug.Log(wanted.name);
 
 
         if (Success >= 10)
@@ -114,7 +159,7 @@ public class Portals : MonoBehaviour
             else
             {
                 animator.SetTrigger("Accept");
-                remainingTime += 30f;
+                remainingSec += timegain;
 
                 if (item.layer != 11)
                     manager.Used.Add(item);

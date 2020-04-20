@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlatColor_Purple
+  m_Name: FlatColor_RedLight
   m_Shader: {fileID: 4800000, guid: d29fbc74b1c53c447ac1c9917bdf6b70, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -32,5 +32,5 @@ Material:
     - _ScaleNormal: 0
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.26415092, g: 0.14328942, b: 0.23771246, a: 0}
+    - _Color: {r: 0.8867924, g: 0.36391956, b: 0.36391956, a: 0}
     - _Color0: {r: 0.29156286, g: 0.61027664, b: 0.6792453, a: 0}

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlatColor_PurpleLight
+  m_Name: FlatColor_OrangeDark
   m_Shader: {fileID: 4800000, guid: d29fbc74b1c53c447ac1c9917bdf6b70, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -32,5 +32,5 @@ Material:
     - _ScaleNormal: 0
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.6792453, g: 0.509434, b: 0.64528304, a: 0}
+    - _Color: {r: 0.5566038, g: 0.18408431, b: 0.05513528, a: 0}
     - _Color0: {r: 0.29156286, g: 0.61027664, b: 0.6792453, a: 0}

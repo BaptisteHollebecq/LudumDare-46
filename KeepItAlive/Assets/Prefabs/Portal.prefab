@@ -5080,8 +5080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3e6659f5d675e48b42dc5c6823eee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingSec: 45
-  timegain: 30
+  remainingSec: 60
+  timegainOBJ: 15
+  timegainPOT: 30
   manager: {fileID: 0}
   difficultyStade1: 15
   difficultyStade2: 30

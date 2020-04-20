@@ -9,9 +9,13 @@ public class Portals : MonoBehaviour
     Objets wanted;
     GameObject item;
     Objets itemObject;
+
     public float remainingSec = 45f;
-    public float timegain = 30f;
+
+    public float timegainOBJ = 30f;
+    public float timegainPOT = 45f; 
     float remainingMin = 0f;
+
     int timeLeft;
     float score = 0;
 
@@ -116,7 +120,7 @@ public class Portals : MonoBehaviour
         //Debug.Log(wanted.name);
 
 
-        if (Success >= 10)
+        if (Success >= 8)
         {
             RespawnStuffs();
         }
@@ -162,11 +166,18 @@ public class Portals : MonoBehaviour
             else
             {
                 animator.SetTrigger("Accept");
-                remainingSec += timegain;
                 Win.Play();
 
+
                 if (item.layer != 11)
+                {
                     manager.Used.Add(item);
+                    remainingSec += timegainOBJ;
+                }
+                else
+                    remainingSec += timegainPOT;
+
+
                 Success++;
                 Difficulty++;
                 item.SetActive(false);

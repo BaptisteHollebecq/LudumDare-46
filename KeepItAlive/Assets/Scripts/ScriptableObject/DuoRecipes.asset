@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Recettes:
   - slot1: {fileID: 6416988097932018875, guid: d15db39136c00304eb888a6c12828ce3, type: 3}
-    slot2: {fileID: 1697670757121867255, guid: 610d09615eb5f7a4c91d730961225239, type: 3}
+    slot2: {fileID: -1074755111865466950, guid: 15a14415cd87a7b4bbc42aa17f2702d2,
+      type: 3}
     Result: {fileID: 2872887141365381513, guid: 8ff077612a7bb644cb73600fc4e82723,
       type: 3}
   - slot1: {fileID: -1277375505548707383, guid: 0cb1de10d3409c443974297f3ab33b3d,
@@ -27,8 +28,37 @@ MonoBehaviour:
     slot2: {fileID: 4126137315645196936, guid: 4ed565b125670644d9e891796447d7c0, type: 3}
     Result: {fileID: 2872887141365381513, guid: 5bfb336ff5d445d4aa23d65d96847051,
       type: 3}
-  - slot1: {fileID: 1697670757121867255, guid: 610d09615eb5f7a4c91d730961225239, type: 3}
+  - slot1: {fileID: -1074755111865466950, guid: 15a14415cd87a7b4bbc42aa17f2702d2,
+      type: 3}
     slot2: {fileID: -1277375505548707383, guid: 0cb1de10d3409c443974297f3ab33b3d,
       type: 3}
     Result: {fileID: 2872887141365381513, guid: a8b224e08515ada4d8b9549c1495e702,
+      type: 3}
+  - slot1: {fileID: 1008413078381440177, guid: ce64ae3979bf2d34182cead899951f8c, type: 3}
+    slot2: {fileID: 6832217764729545512, guid: a17e34cc24691dc408ec5a9aaaebf954, type: 3}
+    Result: {fileID: 2872887141365381513, guid: 326fcd86185fb6140944835313afa4a6,
+      type: 3}
+  - slot1: {fileID: -6967310569928093471, guid: da1d6f9ca1fa4e0428a862dac84e81c8,
+      type: 3}
+    slot2: {fileID: 4438379907836498937, guid: 671c58f3643c31a438555beeb2cfc993, type: 3}
+    Result: {fileID: 2872887141365381513, guid: 6fb8cb73be2e40e4ba3509b4c6ca2fd3,
+      type: 3}
+  - slot1: {fileID: -3265704509535686275, guid: d0cb7a2063e91f24795eef2ab0c7302b,
+      type: 3}
+    slot2: {fileID: 2211202969355155117, guid: d04152806d09182409b9512dac78febd, type: 3}
+    Result: {fileID: 2872887141365381513, guid: 59c8bf308efa9e44c952bf1dae10da4e,
+      type: 3}
+  - slot1: {fileID: -4639587516483125168, guid: ccbba0b2d4ae3d14b831f933de2906b8,
+      type: 3}
+    slot2: {fileID: 2211202969355155117, guid: d04152806d09182409b9512dac78febd, type: 3}
+    Result: {fileID: 2872887141365381513, guid: 13e6a99bd36b5d841bc373a0efd2d2a4,
+      type: 3}
+  - slot1: {fileID: 1008413078381440177, guid: ce64ae3979bf2d34182cead899951f8c, type: 3}
+    slot2: {fileID: -164598109028681206, guid: 389ce3a73c369c740980242f61df73d7, type: 3}
+    Result: {fileID: 2872887141365381513, guid: bb524c1aec1a0bf468da4aa13ea4ae7b,
+      type: 3}
+  - slot1: {fileID: 8041769112835749408, guid: 57927cce02cb4f84da00f9ebec181c3e, type: 3}
+    slot2: {fileID: -6829043398021709563, guid: 833f66a70c18c7f45bf00e2d94745774,
+      type: 3}
+    Result: {fileID: 2872887141365381513, guid: 1097d5619b07f1345a3e8928bc76f196,
       type: 3}

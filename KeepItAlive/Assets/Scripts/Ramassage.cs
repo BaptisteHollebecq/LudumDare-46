@@ -45,9 +45,9 @@ public class Ramassage : MonoBehaviour
                     {
                         hit.transform.GetChild(0).GetComponent<Chaudron>().CheckCraft();
                     }
-                    if (hit.transform.tag == "livre")
+                    if (hit.transform.tag == "Livre")
                     {
-                        hit.transform.GetChild(0).GetComponent<Livre>().NextPage();
+                        hit.transform.GetComponent<Livre>().NextPage();
                     }
                 }
             }
@@ -74,9 +74,9 @@ public class Ramassage : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Range, Mask))
                 {
-                    if (hit.transform.tag == "livre")
+                    if (hit.transform.tag == "Livre")
                     {
-                        hit.transform.GetChild(0).GetComponent<Livre>().PreviousPage();
+                        hit.transform.GetComponent<Livre>().PreviousPage();
                     }
                 }
             }

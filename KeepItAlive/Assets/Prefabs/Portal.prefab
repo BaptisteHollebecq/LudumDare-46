@@ -5080,12 +5080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3e6659f5d675e48b42dc5c6823eee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingSec: 60
-  timegainOBJ: 15
-  timegainPOT: 30
+  remainingSec: 90
+  timegainOBJ: 20
+  timegainPOT: 35
   manager: {fileID: 0}
-  difficultyStade1: 15
-  difficultyStade2: 30
+  difficultyStade1: 8
+  difficultyStade2: 20
   animator: {fileID: 1283579903778954829}
   spriteRenderer: {fileID: 0}
   text: {fileID: 0}

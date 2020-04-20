@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c2e806bbd62dd46ac6d038e57f09a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   gravity: 12
   CanJump: 1
   JumpHeight: 1.5
   CanSprint: 1
-  Multiplier: 2
+  Multiplier: 1.6
   GroundDistance: 0.3
   GroundMask:
     serializedVersion: 2
@@ -226,11 +226,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8293936059827836298}
     m_Modifications:
-    - target: {fileID: 2237573989931838463, guid: b1d9e5e6422abcd4fae47e93d7730ed7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8031666620022267547, guid: b1d9e5e6422abcd4fae47e93d7730ed7,
         type: 3}
       propertyPath: m_Name
@@ -334,6 +329,11 @@ PrefabInstance:
     - target: {fileID: 8548771544511246034, guid: b1d9e5e6422abcd4fae47e93d7730ed7,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237573989931838463, guid: b1d9e5e6422abcd4fae47e93d7730ed7,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7980548462522044543, guid: b1d9e5e6422abcd4fae47e93d7730ed7,

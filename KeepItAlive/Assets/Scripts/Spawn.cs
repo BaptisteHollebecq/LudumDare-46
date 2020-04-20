@@ -8,7 +8,8 @@ public class Spawn : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        available = false;
+        if (other.tag == "objet")
+            available = false;  
     }
 
     private void OnTriggerExit(Collider other)

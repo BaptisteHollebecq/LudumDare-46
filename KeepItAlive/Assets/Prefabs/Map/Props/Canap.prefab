@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3705737565166494096}
   - component: {fileID: 5635808607436987302}
   - component: {fileID: 2092735093626185567}
-  m_Layer: 0
+  - component: {fileID: -1750918382797558641}
+  m_Layer: 8
   m_Name: Canap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-1750918382797558641
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375546401683608451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6591430144674148153, guid: 8f8fe3cb86dc08e449a734b0c55b462e, type: 3}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2378058247874625707}
   - component: {fileID: 6655064467003308701}
   - component: {fileID: 1109856606897931876}
-  m_Layer: 0
+  - component: {fileID: 2659831821846349333}
+  m_Layer: 8
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683174973937005240}
-  m_Mesh: {fileID: 2967845863740488246, guid: 73cac4fc6b5eee548b173d62411187d8, type: 3}
+  m_Mesh: {fileID: 2967845863740488246, guid: ed622eea2a6edff4eb72e953acea2788, type: 3}
 --- !u!23 &1109856606897931876
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,6 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 670224309865224971, guid: 73cac4fc6b5eee548b173d62411187d8, type: 3}
   - {fileID: 670224309865224971, guid: 73cac4fc6b5eee548b173d62411187d8, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -78,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2659831821846349333
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683174973937005240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2967845863740488246, guid: ed622eea2a6edff4eb72e953acea2788, type: 3}

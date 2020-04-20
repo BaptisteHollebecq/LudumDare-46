@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2085265143455554753}
   - component: {fileID: 7037823462142060279}
   - component: {fileID: 3645618053072869902}
-  m_Layer: 0
+  - component: {fileID: -809308546974050572}
+  m_Layer: 8
   m_Name: Mirrrrrrrouaire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-809308546974050572
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074551451490119378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5060444177187149915, guid: 6f33703c1781bed49a021d5ecf75ed0f, type: 3}
